@@ -31,7 +31,7 @@ dishRouter.route('/')
     res.statusCode = 404;
     res.end('Put operation not supported');
 })
-.delete((_req, res) => {
+.delete((_req, res,next) => {
     Dishes.remove({})
     .then((resp) => {
         console.log(`${resp} deleted from the collection ${Dishes}`);
